@@ -1,11 +1,11 @@
 <script setup>
 import { ref } from 'vue'
 
-const isVisible = ref(false)
+const isVisible = ref(true)
 </script>
 
 <template>
-  <div class="item" @mouseenter="" @mouseleave="">
+  <div class="item" @mouseenter="isVisible = true" @mouseleave="isVisible = false">
     <div class="item-title">Sneakers</div>
     <div class="item-price">$400</div>
     <div class="delete-btn" v-show="isVisible"></div>
