@@ -17,8 +17,8 @@ defineProps({
 
 <template>
   <div class="item" @mouseenter="toggleDeleteBtn" @mouseleave="toggleDeleteBtn">
-    <div class="item-title">{{ title }}</div>
-    <div class="item-price">{{ price }}</div>
+    <div class="item-title">{{ item.title }}</div>
+    <div class="item-price">{{ item.price }}</div>
     <div class="delete-btn" v-show="isVisible">
       <i class="fa-solid fa-x"></i>
     </div>
@@ -28,6 +28,7 @@ defineProps({
 <style scoped>
 .item {
   width: 100%;
+  height: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -3,13 +3,24 @@ import ItemComp from './ItemComp.vue'
 import { ref } from 'vue'
 
 // the reactive variables
-const title = ref('Video Game')
-const price = ref(45)
+const title = ref('')
+const price = ref()
 
 const items = ref([])
 
 const addNewTransaction = () => {
-  items.value.push({ title, price })
+  if (title.value === '' || price.value === '') {
+    return
+  }
+  // const currentTitle = title.value
+  // const currentPrice = price.value
+  items.value.push({
+    title: title.value,
+    price: price.value,
+  })
+
+  title.value = ''
+  price.value = ''
 }
 </script>
 
@@ -17,7 +28,7 @@ const addNewTransaction = () => {
   <div class="history">
     <h3>History</h3>
     <br />
-    <ItemComp v-for="(item, index) in items" :key="index" :item="item" />
+    <ItemComp v-for="item in items" :key="item.title" :item="item" />
   </div>
   <div class="admin-section">
     <h3>Add new transactions</h3>
