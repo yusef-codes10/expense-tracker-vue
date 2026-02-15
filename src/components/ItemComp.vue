@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, defineEmits } from 'vue'
 
 const isVisible = ref(false)
 
@@ -13,6 +13,8 @@ defineProps({
     type: Object,
   },
 })
+
+const emit = defineEmits(['deleteItem'])
 </script>
 
 <template>
@@ -20,7 +22,7 @@ defineProps({
     <div class="item-title">{{ item.title }}</div>
     <div class="item-price">{{ item.price }}</div>
     <div class="delete-btn" v-show="isVisible">
-      <i class="fa-solid fa-x"></i>
+      <i class="fa-solid fa-x" @click="emit('deleteItem', item.title)"></i>
     </div>
   </div>
 </template>
@@ -28,7 +30,7 @@ defineProps({
 <style scoped>
 .item {
   width: 100%;
-  height: 30px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;

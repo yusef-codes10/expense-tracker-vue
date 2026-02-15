@@ -19,8 +19,14 @@ const addNewTransaction = () => {
     price: price.value,
   })
 
-  title.value = ''
-  price.value = ''
+  // title.value = ''
+  // price.value = ''
+}
+
+// delete item function
+const deleteItem = (toDelete) => {
+  console.log('yes 11111111111')
+  items.value.filter((item) => item.title !== toDelete.title)
 }
 </script>
 
@@ -28,7 +34,7 @@ const addNewTransaction = () => {
   <div class="history">
     <h3>History</h3>
     <br />
-    <ItemComp v-for="item in items" :key="item.title" :item="item" />
+    <ItemComp v-for="item in items" :key="item.title" :item="item" @deleteItem="deleteItem" />
   </div>
   <div class="admin-section">
     <h3>Add new transactions</h3>
