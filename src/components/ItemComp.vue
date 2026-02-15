@@ -9,8 +9,9 @@ const toggleDeleteBtn = () => {
 
 // define the props
 defineProps({
-  title: String,
-  price: Number,
+  item: {
+    type: Object,
+  },
 })
 </script>
 

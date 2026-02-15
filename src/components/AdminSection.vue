@@ -5,13 +5,19 @@ import { ref } from 'vue'
 // the reactive variables
 const title = ref('Video Game')
 const price = ref(45)
+
+const items = ref([])
+
+const addNewTransaction = () => {
+  items.value.push({ title, price })
+}
 </script>
 
 <template>
   <div class="history">
     <h3>History</h3>
     <br />
-    <ItemComp :title="title" :price="price" />
+    <ItemComp v-for="(item, index) in items" :key="index" :item="item" />
   </div>
   <div class="admin-section">
     <h3>Add new transactions</h3>
@@ -29,7 +35,7 @@ const price = ref(45)
       <input type="text" id="amount" placeholder="Enter amount..." v-model="price" />
     </div>
     <div class="btn">
-      <button>Add</button>
+      <button @click="addNewTransaction">Add</button>
     </div>
   </div>
 </template>
