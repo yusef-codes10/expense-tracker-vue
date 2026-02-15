@@ -1,4 +1,5 @@
 <script setup>
+import AdminSection from './components/AdminSection.vue'
 import DisplaySection from './components/DisplaySection.vue'
 import HistorySection from './components/HistorySection.vue'
 </script>
@@ -7,6 +8,7 @@ import HistorySection from './components/HistorySection.vue'
   <div class="expense-tracker">
     <DisplaySection />
     <HistorySection />
+    <AdminSection />
   </div>
 </template>
 
