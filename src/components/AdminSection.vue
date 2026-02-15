@@ -22,4 +22,67 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.admin-section {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.admin-section h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.text-filed,
+.amount-filed {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+.btn {
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+</style>
