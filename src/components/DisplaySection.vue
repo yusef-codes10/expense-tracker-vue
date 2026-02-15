@@ -21,7 +21,8 @@
 
 <style scoped>
 .header {
-  width: 300px;
+  width: 100%;
+  background-color: seagreen;
 }
 
 h3 {
@@ -35,8 +36,10 @@ span {
   margin: 0.5rem;
 }
 .values {
-  display: inline-flex;
-  width: 100%;
+  /* display: inline-flex; */
+  display: flex;
+  /* width: 100%; */
+  justify-content: center;
   /* margin: 0 auto; */
   /* justify-self: center; */
 }
@@ -47,6 +50,7 @@ span {
   padding: 0.5rem 1.5rem;
 
   box-shadow: 2px 2px 2px #000;
+  width: 100%;
 }
 
 .income span {
