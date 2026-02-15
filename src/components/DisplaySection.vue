@@ -20,6 +20,10 @@
 </template>
 
 <style scoped>
+.header {
+  width: 300px;
+}
+
 h3 {
   margin: 1rem 0;
 }

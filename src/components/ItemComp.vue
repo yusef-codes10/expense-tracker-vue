@@ -9,7 +9,7 @@
 
 <style scoped>
 .item {
-  width: 100%;
+  width: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,8 +17,11 @@
   padding: 1rem;
 }
 
-.item-title,
+.item-title {
+  background-color: red;
+}
+
 .item-price {
-  width: 100%;
+  background-color: blue;
 }
 </style>

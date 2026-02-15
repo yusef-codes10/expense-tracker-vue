@@ -11,7 +11,7 @@ import ItemComp from './ItemComp.vue'
 </template>
 
 <style scoped>
-.histroy {
-  width: 100%;
+.history {
+  width: 300px;
 }
 </style>
