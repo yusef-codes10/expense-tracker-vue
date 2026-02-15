@@ -39,7 +39,7 @@ span {
 
 .income,
 .expense {
-  background-color: seagreen;
+  background-color: #fff;
   padding: 0.5rem 1.5rem;
 
   box-shadow: 2px 2px 2px #000;
