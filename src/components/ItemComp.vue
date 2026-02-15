@@ -1,17 +1,23 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps } from 'vue'
 
 const isVisible = ref(false)
 
 const toggleDeleteBtn = () => {
   isVisible.value = !isVisible.value
 }
+
+// define the props
+defineProps({
+  title: String,
+  price: Number,
+})
 </script>
 
 <template>
   <div class="item" @mouseenter="toggleDeleteBtn" @mouseleave="toggleDeleteBtn">
-    <div class="item-title">Sneakers</div>
-    <div class="item-price">$400</div>
+    <div class="item-title">{{ title }}</div>
+    <div class="item-price">{{ price }}</div>
     <div class="delete-btn" v-show="isVisible">
       <i class="fa-solid fa-x"></i>
     </div>
