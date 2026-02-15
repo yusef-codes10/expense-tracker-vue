@@ -1,7 +1,8 @@
 <script setup></script>
 
 <template>
-  <h1>You did it!</h1>
+  <h3>History</h3>
+  <br />
 </template>
 
 <style scoped></style>
