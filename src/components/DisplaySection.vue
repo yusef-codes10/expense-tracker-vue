@@ -22,7 +22,7 @@
 <style scoped>
 .header {
   width: 100%;
-  background-color: seagreen;
+  /* background-color: seagreen; */
 }
 
 h3 {
@@ -49,7 +49,7 @@ span {
   background-color: #fff;
   padding: 0.5rem 1.5rem;
 
-  box-shadow: 2px 2px 2px #000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   width: 100%;
 }
 

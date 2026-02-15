@@ -24,9 +24,11 @@ const toggleDeleteBtn = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 1rem;
   border-right: 4px green solid;
+  background-color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
   position: relative;
 }
