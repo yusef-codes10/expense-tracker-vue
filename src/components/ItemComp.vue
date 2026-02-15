@@ -1,9 +1,14 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+
+const isVisible = ref(false)
+</script>
 
 <template>
-  <div class="item">
+  <div class="item" @mouseenter="" @mouseleave="">
     <div class="item-title">Sneakers</div>
     <div class="item-price">$400</div>
+    <div class="delete-btn" v-show="isVisible"></div>
   </div>
 </template>
 
@@ -15,13 +20,12 @@
   align-items: center;
   border: 2px solid red;
   padding: 1rem;
+  border-right: 4px green solid;
 }
 
-.item-title {
-  background-color: red;
-}
-
-.item-price {
-  background-color: blue;
+.delete-btn {
+  height: 100px;
+  width: 100px;
+  background-color: sienna;
 }
 </style>
