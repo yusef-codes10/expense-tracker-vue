@@ -1,14 +1,20 @@
 <script setup>
 import { ref } from 'vue'
 
-const isVisible = ref(true)
+const isVisible = ref(false)
+
+const toggleDeleteBtn = () => {
+  isVisible.value = !isVisible.value
+}
 </script>
 
 <template>
-  <div class="item" @mouseenter="isVisible = true" @mouseleave="isVisible = false">
+  <div class="item" @mouseenter="toggleDeleteBtn" @mouseleave="toggleDeleteBtn">
     <div class="item-title">Sneakers</div>
     <div class="item-price">$400</div>
-    <div class="delete-btn" v-show="isVisible"></div>
+    <div class="delete-btn" v-show="isVisible">
+      <i class="fa-solid fa-x"></i>
+    </div>
   </div>
 </template>
 
@@ -21,11 +27,26 @@ const isVisible = ref(true)
   border: 2px solid red;
   padding: 1rem;
   border-right: 4px green solid;
+
+  position: relative;
 }
 
 .delete-btn {
-  height: 100px;
-  width: 100px;
-  background-color: sienna;
+  height: 54px;
+  width: 20px;
+  /* background-color: sienna; */
+  color: red;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+
+i {
+  cursor: pointer;
 }
 </style>
