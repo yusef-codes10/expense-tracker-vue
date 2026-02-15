@@ -1,7 +1,18 @@
-<script setup></script>
+<script setup>
+import DisplaySection from './components/DisplaySection.vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
+  <div class="expense-tracker">
+    <DisplaySection />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.expense-tracker {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  align-items: center;
+}
+</style>
