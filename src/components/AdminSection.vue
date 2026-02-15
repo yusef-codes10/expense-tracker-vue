@@ -1,6 +1,13 @@
-<script setup></script>
+<script setup>
+import ItemComp from './ItemComp.vue'
+</script>
 
 <template>
+  <div class="history">
+    <h3>History</h3>
+    <br />
+    <ItemComp />
+  </div>
   <div class="admin-section">
     <h3>Add new transactions</h3>
     <br />
@@ -84,5 +91,9 @@ button {
 
 button:hover {
   background-color: #4338ca;
+}
+
+.history {
+  width: 100%;
 }
 </style>
