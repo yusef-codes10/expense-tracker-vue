@@ -8,7 +8,7 @@ export const useStore = defineStore('useExpense', () => {
 
   // const income = ref(100)
 
-  const expense = ref(87)
+  const expense = ref(0)
 
   const items = ref([{ id: 1, title: 'Needle', price: 22.99, isIncome: true }])
 
