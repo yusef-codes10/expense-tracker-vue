@@ -57,8 +57,10 @@ const checkBalance = () => {
 
 const isIncome = () => {
   if (price.value < 0) {
+    console.log('negative')
     return false
   }
+  console.log('positive')
   return true
 }
 </script>

@@ -33,7 +33,7 @@ export const useStore = defineStore('useExpense', () => {
   // income should be computed prop that calculates the total of al items
   const income = computed(() => {
     let sum = 0
-    for (const item of items) {
+    for (const item of items.value) {
       sum += item.price
     }
     return sum
