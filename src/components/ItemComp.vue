@@ -18,7 +18,12 @@ const emit = defineEmits(['deleteItem'])
 </script>
 
 <template>
-  <div class="item" @mouseenter="toggleDeleteBtn" @mouseleave="toggleDeleteBtn">
+  <div
+    class="item"
+    :class="item.isIncome ? 'income' : 'expense'"
+    @mouseenter="toggleDeleteBtn"
+    @mouseleave="toggleDeleteBtn"
+  >
     <div class="item-title">{{ item.title }}</div>
     <div class="item-price">{{ item.price }}</div>
     <div class="delete-btn" v-show="isVisible">
@@ -36,11 +41,18 @@ const emit = defineEmits(['deleteItem'])
   align-items: center;
   /* border: 2px solid red; */
   padding: 1rem;
-  border-right: 4px green solid;
   background-color: #fff;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 
   position: relative;
+}
+
+.expense {
+  border-right: 4px red solid;
+}
+
+.income {
+  border-right: 4px green solid;
 }
 
 .delete-btn {
