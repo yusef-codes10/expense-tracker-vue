@@ -9,6 +9,8 @@ const price = ref()
 const items = ref([{ id: 1, title: 'Needle', price: 22.99 }])
 
 const addNewTransaction = () => {
+  // before adding a new transaction, check you balance
+
   if (title.value === '' || price.value === '') {
     return
   }
@@ -29,6 +31,8 @@ const deleteItem = (toDelete) => {
   console.log('yes 11111111111')
   items.value = items.value.filter((item) => item.id !== toDelete)
 }
+
+const checkBalance = () => {}
 </script>
 
 <template>
