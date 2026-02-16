@@ -1,10 +1,14 @@
-<script setup></script>
+<script setup>
+import { useStore } from '@/stores/useExpense'
+</script>
 
 <template>
   <div class="header">
     <h3>Expense Tracker</h3>
     <div class="balance">
-      <p>Your Ballance: <span> $300.99</span></p>
+      <p>
+        Your Ballance: <span> {{ useStore.balance }}</span>
+      </p>
     </div>
     <div class="values">
       <div class="income">
