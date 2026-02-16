@@ -15,11 +15,11 @@ const myStore = useStore()
     <div class="values">
       <div class="income">
         Income
-        <span>+$100</span>
+        <span>+${{ myStore.income }}</span>
       </div>
       <div class="expense">
         Expense
-        <span>-$200</span>
+        <span>-${{ myStore.expense }}</span>
       </div>
     </div>
   </div>
