@@ -34,9 +34,9 @@ export const useStore = defineStore('useExpense', () => {
   const income = computed(() => {
     let sum = 0
     for (const item of items.value) {
-      sum += item.price
+      sum += Number(item.price)
     }
-    return sum
+    return sum.toFixed(2)
   })
 
   return {
