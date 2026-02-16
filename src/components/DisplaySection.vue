@@ -1,5 +1,7 @@
 <script setup>
 import { useStore } from '@/stores/useExpense'
+
+const myStore = useStore()
 </script>
 
 <template>
@@ -7,7 +9,7 @@ import { useStore } from '@/stores/useExpense'
     <h3>Expense Tracker</h3>
     <div class="balance">
       <p>
-        Your Ballance: <span> {{ useStore.balance }}</span>
+        Your Ballance: <span> {{ myStore.balance }}</span>
       </p>
     </div>
     <div class="values">

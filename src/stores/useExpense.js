@@ -5,4 +5,8 @@ import { ref } from 'vue'
 export const useStore = defineStore('useExpense', () => {
   // *state
   const balance = ref(300)
+
+  return {
+    balance,
+  }
 })
