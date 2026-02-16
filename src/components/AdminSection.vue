@@ -41,6 +41,11 @@ const checkBalance = () => {
     console.error('not enough money!!!')
     return false
   }
+  if (myStore.balance < 0) {
+    // call the addExpense function
+  } else {
+    // call the add Income function
+  }
   return true
 }
 </script>
