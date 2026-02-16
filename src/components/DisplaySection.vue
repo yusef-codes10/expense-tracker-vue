@@ -9,7 +9,7 @@ const myStore = useStore()
     <h3>Expense Tracker</h3>
     <div class="balance">
       <p>
-        Your Ballance: <span> {{ myStore.balance }}</span>
+        Your Ballance: <span> ${{ myStore.balance }}</span>
       </p>
     </div>
     <div class="values">
