@@ -1,10 +1,10 @@
 // this is the pinia store
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 export const useStore = defineStore('useExpense', () => {
   // *state (computed)
-  const balance = ref(300)
+  //   const balance = ref(300)
 
   const income = ref(100)
 
@@ -16,6 +16,9 @@ export const useStore = defineStore('useExpense', () => {
   const addexpense = () => {}
 
   // * getters (computed)
+  const balance = computed(() => {
+    return income.value - expense.value
+  })
 
   return {
     balance,
