@@ -10,6 +10,7 @@ const items = ref([{ id: 1, title: 'Needle', price: 22.99 }])
 
 const addNewTransaction = () => {
   // before adding a new transaction, check you balance
+  checkBalance()
 
   if (title.value === '' || price.value === '') {
     return
