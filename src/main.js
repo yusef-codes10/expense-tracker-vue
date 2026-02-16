@@ -5,5 +5,8 @@ import '@/assets/main.css'
 
 const pinia = createPinia()
 
-App.use(pinia)
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.mount('#app')
+
+app.use(pinia)
