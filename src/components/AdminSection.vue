@@ -43,6 +43,7 @@ const checkBalance = () => {
   }
   if (myStore.balance < 0) {
     // call the addExpense function
+    myStore.addIncome(price.value)
   } else {
     // call the add Income function
   }

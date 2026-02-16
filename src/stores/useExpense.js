@@ -13,7 +13,9 @@ export const useStore = defineStore('useExpense', () => {
   const items = ref([{ id: 1, title: 'Needle', price: 22.99 }])
 
   //   * actions
-  const addIncome = () => {}
+  const addIncome = (something) => {
+    income.value += something
+  }
 
   const addexpense = () => {}
 
@@ -35,5 +37,6 @@ export const useStore = defineStore('useExpense', () => {
 
     // * actions
     deleteItem,
+    addIncome,
   }
 })
