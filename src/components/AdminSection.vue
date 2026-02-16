@@ -6,7 +6,7 @@ import { ref } from 'vue'
 const title = ref('')
 const price = ref()
 
-const items = ref([])
+const items = ref([{ id: 1, title: 'Needle', price: 22.99 }])
 
 const addNewTransaction = () => {
   if (title.value === '' || price.value === '') {
@@ -15,6 +15,7 @@ const addNewTransaction = () => {
   // const currentTitle = title.value
   // const currentPrice = price.value
   items.value.push({
+    id: crypto.randomUUID(),
     title: title.value,
     price: price.value,
   })
@@ -26,7 +27,7 @@ const addNewTransaction = () => {
 // delete item function
 const deleteItem = (toDelete) => {
   console.log('yes 11111111111')
-  items.value.filter((item) => item.title !== toDelete.title)
+  items.value = items.value.filter((item) => item.id !== toDelete)
 }
 </script>
 
@@ -34,7 +35,7 @@ const deleteItem = (toDelete) => {
   <div class="history">
     <h3>History</h3>
     <br />
-    <ItemComp v-for="item in items" :key="item.title" :item="item" @deleteItem="deleteItem" />
+    <ItemComp v-for="item in items" :key="item.id" :item="item" @deleteItem="deleteItem" />
   </div>
   <div class="admin-section">
     <h3>Add new transactions</h3>

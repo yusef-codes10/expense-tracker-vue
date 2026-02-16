@@ -22,7 +22,7 @@ const emit = defineEmits(['deleteItem'])
     <div class="item-title">{{ item.title }}</div>
     <div class="item-price">{{ item.price }}</div>
     <div class="delete-btn" v-show="isVisible">
-      <i class="fa-solid fa-x" @click="emit('deleteItem', item.title)"></i>
+      <i class="fa-solid fa-x" @click="emit('deleteItem', item.id)"></i>
     </div>
   </div>
 </template>
