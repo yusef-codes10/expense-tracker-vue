@@ -9,6 +9,9 @@ const myStore = useStore()
 const title = ref('')
 const price = ref()
 
+const isDanger = ref(false)
+// const isIncome = ref(false)
+
 const addNewTransaction = () => {
   // before adding a new transaction, check you balance
   if (!checkBalance()) {
@@ -24,6 +27,7 @@ const addNewTransaction = () => {
     id: crypto.randomUUID(),
     title: title.value,
     price: price.value,
+    isIncome: isIncome(),
   })
 
   // title.value = ''
@@ -39,13 +43,21 @@ const addNewTransaction = () => {
 const checkBalance = () => {
   if (price.value > myStore.balance) {
     console.error('not enough money!!!')
+    isDanger.value = true
     return false
   }
   if (myStore.balance < 0) {
     // call the addExpense function
-    myStore.addIncome(price.value)
+    myStore.isIncome = myStore.addIncome(price.value)
   } else {
     // call the add Income function
+  }
+  return true
+}
+
+const isIncome = () => {
+  if (price.value < 0) {
+    return false
   }
   return true
 }
@@ -75,7 +87,13 @@ const checkBalance = () => {
         <br />
         (Negative: Expense, Posisitve: income)
       </label>
-      <input type="text" id="amount" placeholder="Enter amount..." v-model="price" />
+      <input
+        :class="{ dange: isDanger }"
+        type="text"
+        id="amount"
+        placeholder="Enter amount..."
+        v-model="price"
+      />
     </div>
     <div class="btn">
       <button @click="addNewTransaction">Add</button>
@@ -125,6 +143,11 @@ input:focus {
   outline: none;
   border-color: #4f46e5;
   box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15);
+}
+
+/* danger */
+.danger {
+  border: 1px solid #c20a0a;
 }
 
 .btn {
