@@ -39,7 +39,7 @@ const deleteItem = (toDelete) => {
 }
 
 const checkBalance = () => {
-  if (price.value < myStore.balance) {
+  if (price.value > myStore.balance) {
     console.error('not enough money!!!')
     return false
   }
