@@ -9,8 +9,6 @@ const myStore = useStore()
 const title = ref('')
 const price = ref()
 
-const items = ref([{ id: 1, title: 'Needle', price: 22.99 }])
-
 const addNewTransaction = () => {
   // before adding a new transaction, check you balance
   if (!checkBalance()) {
@@ -22,7 +20,7 @@ const addNewTransaction = () => {
   }
   // const currentTitle = title.value
   // const currentPrice = price.value
-  items.value.push({
+  myStore.items.push({
     id: crypto.randomUUID(),
     title: title.value,
     price: price.value,
@@ -33,10 +31,10 @@ const addNewTransaction = () => {
 }
 
 // delete item function
-const deleteItem = (toDelete) => {
-  console.log('yes 11111111111')
-  items.value = items.value.filter((item) => item.id !== toDelete)
-}
+// const deleteItem = (toDelete) => {
+//   console.log('yes 11111111111')
+//   myStore.items = myStore.items.filter((item) => item.id !== toDelete)
+// }
 
 const checkBalance = () => {
   if (price.value > myStore.balance) {
@@ -51,7 +49,12 @@ const checkBalance = () => {
   <div class="history">
     <h3>History</h3>
     <br />
-    <ItemComp v-for="item in items" :key="item.id" :item="item" @deleteItem="deleteItem" />
+    <ItemComp
+      v-for="item in myStore.items"
+      :key="item.id"
+      :item="item"
+      @deleteItem="myStore.deleteItem"
+    />
   </div>
   <div class="admin-section">
     <h3>Add new transactions</h3>
