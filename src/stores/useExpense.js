@@ -20,6 +20,10 @@ export const useStore = defineStore('useExpense', () => {
   }
 
   const checkBalance = (price) => {
+    //     if price is positive → it's income → just add it, no check needed
+    //     if price is negative → it's expense → check if balance can cover it
+    //     if balance >= the expense amount → allow it
+    //     if balance < the expense amount → block it, "not enough money"
     if (price > balance.value) {
       console.error('not enough money!!!')
       return false
