@@ -76,7 +76,7 @@ const isIncome = () => {
         (Negative: Expense, Posisitve: income)
       </label>
       <input
-        :class="{ dange: isDanger }"
+        :class="isDanger ? 'danger' : ''"
         type="number"
         id="amount"
         placeholder="Enter amount..."
@@ -136,6 +136,7 @@ input:focus {
 /* danger */
 .danger {
   border: 1px solid #c20a0a;
+  background-color: #c20a0a;
 }
 
 .btn {
@@ -163,8 +164,8 @@ button:hover {
   /* overflow-y: scroll; */
 }
 
-.items {
+/* .items {
   height: 100px;
   overflow-y: scroll;
-}
+} */
 </style>
