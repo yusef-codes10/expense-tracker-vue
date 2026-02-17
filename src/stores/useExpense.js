@@ -14,13 +14,6 @@ export const useStore = defineStore('useExpense', () => {
 
   const isIncome = ref(true)
 
-  //   * actions
-  const addIncome = (something) => {
-    income.value += something
-  }
-
-  const addexpense = () => {}
-
   const deleteItem = (id) => {
     console.log('yes 11111111111')
     items.value = items.value.filter((item) => item.id !== id)
@@ -61,6 +54,5 @@ export const useStore = defineStore('useExpense', () => {
 
     // * actions
     deleteItem,
-    addIncome,
   }
 })

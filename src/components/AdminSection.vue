@@ -93,7 +93,7 @@ const isIncome = () => {
       </label>
       <input
         :class="{ dange: isDanger }"
-        type="text"
+        type="number"
         id="amount"
         placeholder="Enter amount..."
         v-model="price"
