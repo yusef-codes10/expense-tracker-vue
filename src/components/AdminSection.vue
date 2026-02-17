@@ -14,10 +14,9 @@ const isDanger = ref(false)
 
 const addNewTransaction = () => {
   // before adding a new transaction, check you balance
-  if (!checkBalance()) {
+  if (!myStore.checkBalance(price.value)) {
     return
   }
-
   if (title.value === '' || price.value === '') {
     return
   }
@@ -39,21 +38,6 @@ const addNewTransaction = () => {
 //   console.log('yes 11111111111')
 //   myStore.items = myStore.items.filter((item) => item.id !== toDelete)
 // }
-
-const checkBalance = () => {
-  if (price.value > myStore.balance) {
-    console.error('not enough money!!!')
-    isDanger.value = true
-    return false
-  }
-  if (myStore.balance < 0) {
-    // call the addExpense function
-    myStore.isIncome = myStore.addIncome(price.value)
-  } else {
-    // call the add Income function
-  }
-  return true
-}
 
 const isIncome = () => {
   if (price.value < 0) {

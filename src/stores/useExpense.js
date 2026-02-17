@@ -19,6 +19,19 @@ export const useStore = defineStore('useExpense', () => {
     items.value = items.value.filter((item) => item.id !== id)
   }
 
+  const checkBalance = (price) => {
+    if (price > balance.value) {
+      console.error('not enough money!!!')
+      return false
+    }
+    if (balance.value < 0) {
+      // call the addExpense function
+    } else {
+      // call the add Income function
+    }
+    return true
+  }
+
   // * getters (computed)
   const balance = computed(() => {
     const balanceResult = income.value - Math.abs(expense.value)
@@ -54,5 +67,6 @@ export const useStore = defineStore('useExpense', () => {
 
     // * actions
     deleteItem,
+    checkBalance,
   }
 })
