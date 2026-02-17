@@ -27,7 +27,7 @@ export const useStore = defineStore('useExpense', () => {
     if (price < 0) {
       // this is expense
       // check if balance can cover it
-      if (price > balance.value) {
+      if (Math.abs(price) > balance.value) {
         console.error('Not enough money!!!')
         return false
       }
