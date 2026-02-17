@@ -69,12 +69,14 @@ const isIncome = () => {
   <div class="history">
     <h3>History</h3>
     <br />
-    <ItemComp
-      v-for="item in myStore.items"
-      :key="item.id"
-      :item="item"
-      @deleteItem="myStore.deleteItem"
-    />
+    <div class="items">
+      <ItemComp
+        v-for="item in myStore.items"
+        :key="item.id"
+        :item="item"
+        @deleteItem="myStore.deleteItem"
+      />
+    </div>
   </div>
   <div class="admin-section">
     <h3>Add new transactions</h3>
@@ -174,5 +176,11 @@ button:hover {
 
 .history {
   width: 100%;
+  /* overflow-y: scroll; */
+}
+
+.items {
+  height: 100px;
+  overflow-y: scroll;
 }
 </style>

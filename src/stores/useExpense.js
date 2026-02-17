@@ -8,7 +8,7 @@ export const useStore = defineStore('useExpense', () => {
 
   // const income = ref(100)
 
-  const expense = ref(0)
+  // const expense = ref(0)
 
   const items = ref([{ id: 1, title: 'Needle', price: 22.99, isIncome: true }])
 
@@ -34,7 +34,19 @@ export const useStore = defineStore('useExpense', () => {
   const income = computed(() => {
     let sum = 0
     for (const item of items.value) {
-      sum += Number(item.price)
+      if (item.isIncome) {
+        sum += Number(item.price)
+      }
+    }
+    return sum.toFixed(2)
+  })
+
+  const expense = computed(() => {
+    let sum = 0
+    for (const item of items.value) {
+      if (!item.isIncome) {
+        sum += Number(item.price)
+      }
     }
     return sum.toFixed(2)
   })
