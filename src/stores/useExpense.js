@@ -28,7 +28,7 @@ export const useStore = defineStore('useExpense', () => {
 
   // * getters (computed)
   const balance = computed(() => {
-    return income.value - expense.value
+    return income.value - Math.abs(expense.value)
   })
   // income should be computed prop that calculates the total of al items
   const income = computed(() => {
